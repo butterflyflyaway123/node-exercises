@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>留言本</title>
+  <!-- web标识符路劲 -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="demo/art-template-demo.js">
+  <link rel="stylesheet" href="demo/mime-dmmo.js">
+  <!-- web url资源标识符，和文件的路径没关系 -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  
+  <style>
+
+    .main .head {
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-header container">
+    <h1><a href="index.html">留言本</a> <small>首页</small></h1>
+  </div>
+  <div class="main container">
+    <div class="head">
+      <a class="btn btn-success" href="post">发表留言</a>
+    </div>
+    <ul class="list-group">
+      {{ each comments }}
+      <li class="list-group-item">
+        <span class="badge">14</span> <span>{{ $value.username }}</span>说：<span>{{ $value.content }}</span>
+      </li>
+      {{ /each }}
+    </ul>
+  </div>
+</body>
+
+</html>
